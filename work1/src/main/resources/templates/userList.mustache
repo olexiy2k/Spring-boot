@@ -1,0 +1,25 @@
+<html>
+
+<body>
+    <div>
+        <form action="/logout" method="post">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </div>
+    <div>All users</div>
+    <form method="get" action="/user">
+        <input type="text" name="filterU">
+        <button type="submit">Найти</button>
+    </form>
+    	{{#users}}
+    <div>
+        {{id}}
+        <b>{{username}}</b>
+        <button>add</button>
+    </div>
+    {{/users}}
+
+
+</body>
+</html>
